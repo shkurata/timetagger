@@ -1,0 +1,13 @@
+version: "3"
+services:
+  timetagger:
+    image: ghcr.io/almarklein/timetagger
+    ports:
+      - "80:80"
+    volumes:
+      - ./_timetagger:/root/_timetagger
+    environment:
+      - TIMETAGGER_BIND=0.0.0.0:80
+      - TIMETAGGER_DATADIR=/root/_timetagger
+      - TIMETAGGER_LOG_LEVEL=info
+      - TIMETAGGER_CREDENTIALS=shkurata:7e7a89c7e70cf86e11baca983886ffc204a330ce
